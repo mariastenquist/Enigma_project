@@ -1,0 +1,4 @@
+
+		# gets.chomp (feed 5 numbers) random 5 digits
+		# numbers = (1..9).to_a
+		# get 5. join.
