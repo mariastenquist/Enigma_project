@@ -1,4 +1,5 @@
 require "pry"
+
 class KeyGenerator
 
 	attr_reader :key
@@ -11,9 +12,9 @@ class KeyGenerator
 
 	def key_random
 		digits_arr = []
-		5.times do 
+		5.times do
 		digits_arr << rand(0..9)
-		end 
+		end
 		@key = digits_arr.join
 	end
 
