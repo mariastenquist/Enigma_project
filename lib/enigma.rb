@@ -7,14 +7,16 @@ class Enigma
 	attr_reader :key_generator, :offset_generator
 
 	def initialize
-		@key_generator = KeyGenerator.new
-		@offset_generator = OffsetGenerator.new
+
 	end
 
-def encrypt(my_message, key=0, date=0)
+def encrypt(my_message, key=nil, date=nil)
+	@key_generator = KeyGenerator.new(key)
+	@offset_generator = OffsetGenerator.new(date)
 end
 
-
+def total_rotation(key, offset)
+(key + offset)
 end
 
 end

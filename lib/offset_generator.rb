@@ -5,8 +5,10 @@ require "date"
 # "B" offset = second digit
 # "C" offset = third digit
 # "D" offset = fourth digit
-  attr_reader :a_offset, :b_offset, :c_offset, :d_offset
+
+  attr_reader :offset, :a_offset, :b_offset, :c_offset, :d_offset
   def initialize(date = nil)
+    @offset = [a_offset, b_offset, c_offset, d_offset]
     # create a new date(current date)
     current_date_offset = get_current_date_offset(date)
 
