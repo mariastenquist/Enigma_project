@@ -2,7 +2,7 @@ require "minitest/autorun"
 require "minitest/pride"
 require "pry"
 require "./lib/offset_generator"
-
+require "date"
 class OffsetGeneratorTest < Minitest::Test
   def test_class_exists
     assert OffsetGenerator
@@ -16,13 +16,11 @@ class OffsetGeneratorTest < Minitest::Test
   def test_current_date_offset_method
     offset_generator = OffsetGenerator.new
     #create a Date.new object with a particular date
-    date = Time.new(1201,12,3)
+    date = 121216
     #call on the get_current_date_offset method with that date
     result = offset_generator.get_current_date_offset(date)
-    assert_equal '2401', result
+    assert_equal "8656", result
     assert_equal 4, result.length
   end
-
-
 
 end
