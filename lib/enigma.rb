@@ -16,7 +16,9 @@ def encrypt(my_message, key=nil, date=nil)
 end
 
 def total_rotation(key, offset)
-(key + offset)
+	key.map.with_index do |num, index|
+		num + offset[index]
+	end
 end
 
 end
