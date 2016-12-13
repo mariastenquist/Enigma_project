@@ -4,18 +4,26 @@ class KeyGenerator
 
 	attr_reader :key
 
-	def initialize
+	def initialize(key = default_key)
 		@key = key
+
+		# @key = key_random
+
 		# @date = date
 	end
 
 
-	def key_random
-		digits_arr = []
-		5.times do
-		digits_arr << rand(0..9)
-		end
-		@key = digits_arr.join
+	def default_key
+		Array.new(5){rand(0..9)}
+	end
+
+	def format_key
+		key_gen
+		a =
+		b =
+		c =
+		d =
+
 	end
 
 	# key_1 = KeyGenerator.new
