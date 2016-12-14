@@ -1,3 +1,5 @@
+# testing merge capabilities
+
 class Cipher
   attr_reader :rotation
 
@@ -10,7 +12,7 @@ class Cipher
   end
 
   def characters
-    ("a".."z").to_a + ("0".."9").to_a + [" ", ".", ","] 
+    ("a".."z").to_a + ("0".."9").to_a + [" ", ".", ","]
   end
 
   def characters_rotate
