@@ -26,8 +26,17 @@ class KeyGeneratorTest < Minitest::Test
 		assert_equal false, key_gen_1 == key_gen_2
 	end
 
-	def test_it_can_format_an_encryption_key
-		key_gen = KeyGenerator.new
-		assert_equal [27,79,94,45], key_gen.format([2,7,9,4,5])
+	def test_the_key_generator_is_four_elements_long
+		key_gen = KeyGenerator.new.format_key
+
+		assert_equal 4, key_gen.count
 	end
+
+	def test_the_key_generator_returns_an_array
+		key_gen = KeyGenerator.new.format_key
+
+		assert_equal Array, key_gen.class
+	end
+
+
 end
