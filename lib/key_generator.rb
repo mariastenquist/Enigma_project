@@ -18,15 +18,12 @@ class KeyGenerator
 	end
 
 	def format(key)
-		a = key[0..2].join.to_i
+
+		a = key[0..1].join.to_i
 		b = key[1..2].join.to_i
-		c =	key[2..3].join.to_i
-		d =	key[3..4].join.to_i
+		c = key[2..3].join.to_i
+		d = key[3..4].join.to_i
 		[a, b, c, d]
-
 	end
-
-	# key_1 = KeyGenerator.new
-	# key_2 = KeyGenerator.new
 
 end

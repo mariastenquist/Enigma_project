@@ -15,9 +15,11 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_has_key
-
     assert_equal 4, enigma.key_generator.key.length
+  end
 
+  def test_it_has_offset
+    assert_equal 4, enigma.offset_generator.offset.length
   end
 
   def test_it_has_offset
