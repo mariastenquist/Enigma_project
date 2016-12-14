@@ -1,4 +1,5 @@
 # testing merge capabilities
+# testing git issue (from Maria's computer)
 
 class Cipher
   attr_reader :rotation
