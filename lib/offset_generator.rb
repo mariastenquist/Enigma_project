@@ -9,7 +9,11 @@ require "date"
   end
 
   def get_offset(date_squared)
-    @offset = date_squared.to_s.chars[-4..-1]
+    @offset = []
+    @offset << date_squared.to_s.chars[-4].to_i
+    @offset << date_squared.to_s.chars[-3].to_i
+    @offset << date_squared.to_s.chars[-2].to_i
+    @offset << date_squared.to_s.chars[-1].to_i
   end
 
 end
