@@ -3,11 +3,11 @@ require "./lib/key_generator"
 require "pry"
 
 class Enigma
-	attr_reader :key_generator, :offset_generator, :character_map
+	attr_reader :key, :offset
 
-	def initialize
-		@key = KeyGenerator.new.format_key
-		@offset = OffsetGenerator.new.square_the_date
+	def initialize(key=KeyGenerator.new.format_key, offset=OffsetGenerator.new.square_the_date)
+		@key = key
+		@offset = offset
 	end
 
 	def total_rotation
@@ -17,7 +17,6 @@ class Enigma
 	end
 
 	def encrypt(my_message)
-		total_rotation
 		letters = message_to_characters(my_message)
 		encrypted_letters = letters.map do |set|
 			set.map.with_index do |char, index|
@@ -35,7 +34,16 @@ class Enigma
 		char_index    = characters.index(char_downcase)
 		char_rotation = total_rotation[index] + char_index
 		set_index     = char_rotation % characters.count
-		
+
+		characters[set_index]
+	end
+
+	def decrypt_letters(char, index)
+		char_downcase = char.downcase
+		char_index    = characters.index(char_downcase)
+		char_rotation = total_rotation[index] - char_index
+		set_index     = char_rotation % characters.count
+
 		characters[set_index]
 	end
 

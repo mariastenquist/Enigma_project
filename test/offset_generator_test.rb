@@ -17,7 +17,7 @@ class OffsetGeneratorTest < Minitest::Test
     offset_generator = OffsetGenerator.new
     date_squared = 14693318656
 
-    assert_equal ["8", "6", "5", "6"], offset_generator.get_offset(date_squared)
+    assert_equal [8, 6, 5, 6], offset_generator.get_offset(date_squared)
   end
 
   def test_offset_generator_is_not_random

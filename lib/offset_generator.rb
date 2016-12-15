@@ -15,5 +15,4 @@ require "date"
     @offset << date_squared.to_s.chars[-2].to_i
     @offset << date_squared.to_s.chars[-1].to_i
   end
-
 end
