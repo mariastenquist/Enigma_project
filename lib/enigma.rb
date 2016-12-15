@@ -38,6 +38,24 @@ class Enigma
 		characters[set_index]
 	end
 
+	def encrypt(my_message)
+		letters = message_to_characters(my_message)
+		encrypted_letters = letters.map do |set|
+			set.map.with_index do |char, index|
+				encrypt_letters(char, index)
+			end
+		end.join("")
+	end
+
+	def decrypt(my_message)
+		letters = message_to_characters(my_message)
+		encrypted_letters = letters.map do |set|
+			set.map.with_index do |char, index|
+				decrypt_letters(char, index)
+			end
+		end.join("")
+	end 
+
 	def decrypt_letters(char, index)
 		char_downcase = char.downcase
 		char_index    = characters.index(char_downcase)

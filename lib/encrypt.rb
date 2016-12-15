@@ -13,7 +13,6 @@ class Encrypt
 		encrypted = enigma.encrypt(message)
 		file = File.open(@output_file, "w")
 		file.puts(encrypted)
-		# File.close
 	end
 end
 
