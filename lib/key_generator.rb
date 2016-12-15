@@ -1,13 +1,11 @@
 require "pry"
 
 class KeyGenerator
-
 	attr_reader :key
 
 	def initialize
 		@key = default_key
 	end
-
 
 	def default_key
 		Array.new(5){rand(0..9)}
@@ -20,5 +18,4 @@ class KeyGenerator
 		d = @key[3..4].join.to_i
 		[a, b, c, d]
 	end
-
 end
